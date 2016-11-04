@@ -18,7 +18,7 @@ namespace oAuthProvider.Api.Authorization
             {
                 context.Reject(
                     error: OpenIdConnectConstants.Errors.UnsupportedGrantType,
-                    description: "Tipo de autenticaçao nao suportado pelo servidor.");
+                    description: "Tipo de autenticação não suportado pelo servidor.");
 
                 return Task.FromResult(0);
             }
@@ -89,6 +89,8 @@ namespace oAuthProvider.Api.Authorization
             //ticket.SetResources("ApiCadastro, ApiCliente, ApiVenda, ...");
 
             context.Validate(ticket);
+
+            await Task.FromResult(0);
 
         }
 
